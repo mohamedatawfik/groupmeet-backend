@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My App</title>
+    <link rel="stylesheet" href="/stylesheets/home.css">
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+        <div class="container">
+            <div class="tabs">
+                <button class="tab" id="calendarTab" onclick="selectTab('calendar')">Calendar</button>
+                <button class="tab" id="groupsTab" onclick="selectTab('groups')">Groups</button>
+            </div>
+            <div class="content" id="calendarContent">
+                <h2>Calendar</h2>
+                <p>This is the Calendar tab content.</p>
+            </div>
+            <div class="content" id="groupsContent">
+                <h2>Groups</h2>
+                <p>This is the Groups tab content.</p>
+            </div>
+        </div>
+
+        <script>function selectTab(tabName) {
+                // Get the tab buttons and content elements
+                const calendarTab = document.getElementById('calendarTab');
+                const groupsTab = document.getElementById('groupsTab');
+                const calendarContent = document.getElementById('calendarContent');
+                const groupsContent = document.getElementById('groupsContent');
+
+                // Deselect all tabs and hide all contents
+                calendarTab.classList.remove('active');
+                groupsTab.classList.remove('active');
+                calendarContent.style.display = 'none';
+                groupsContent.style.display = 'none';
+
+                // Select the clicked tab and show its content
+                if (tabName === 'calendar') {
+                    calendarTab.classList.add('active');
+                    calendarContent.style.display = 'block';
+                } else if (tabName === 'groups') {
+                    groupsTab.classList.add('active');
+                    groupsContent.style.display = 'block';
+                }
+            }</script>
+</body>
+
+</html>

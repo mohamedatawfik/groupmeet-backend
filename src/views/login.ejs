@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <title>GroupMeet</title>
+  <!-- take style hseet from /public/stylesheets/style.css -->
+  <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+
+<body>
+  <%- include('partials/header.ejs') %>
+
+  <div class="container">
+    <h1>Welcome to GroupMeet</h1>
+    <form ng-controller="LoginSignupController">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" ng-model="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" ng-model="password" required>
+      </div>
+      <div class="form-group">
+        <button ng-click="login()">Login</button>
+        <button ng-click="signup()">Signup</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script>
+    var app = angular.module('myApp', []);
+
+    app.controller('LoginSignupController', function ($scope) {
+      $scope.login = function () {
+        // Login logic here
+        console.log('Logging in...');
+      };
+
+      $scope.signup = function () {
+        // Signup logic here
+        console.log('Signing up...');
+      };
+    });
+  </script>
+</body>
+
+</html>

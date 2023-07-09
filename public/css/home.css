@@ -1,0 +1,26 @@
+@import "login.css";
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: #45a049;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 0 5px 5px 5px;
+}

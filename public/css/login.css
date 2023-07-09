@@ -1,0 +1,103 @@
+.header {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header__link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 95%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.form-group button:hover {
+  background-color: #45a049;
+}
+
+/* The styles from the previous code can be used here as well */
+
+.tab-container {
+  margin-top: 20px;
+}
+
+.tab-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-list li {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+}
+
+.tab-list li.active {
+  background-color: #45a049;
+}
+
+.tab-content {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 0 5px 5px 5px;
+}
+
+.calendar-container {
+  /* Add styling for the calendar view and event creation form */
+  /* Customize according to your needs */
+}
+
+.groups-container {
+  /* Add styling for the groups list and new group creation form */
+  /* Customize according to your needs */
+}
