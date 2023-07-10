@@ -19,7 +19,10 @@ const eventSchema = new mongoose.Schema({
   creator: {
     type: String
   },
-
+  group: {
+    type: String
+  },
+  
 });
 
 eventSchema.index({ title: 1, creator: 1 }, { unique: true });
