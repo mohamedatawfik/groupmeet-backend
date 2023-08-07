@@ -64,9 +64,9 @@ mongoose.connect('mongodb+srv://Abdul:b2sFAN27A9dqoe4V@cluster0.jmvw9bt.mongodb.
   .then(() => {
     console.log('connected to database')
     // listen to port
-    app.listen(3001, () => {
-      console.log('listening for requests on port', 3001)
-    })
+    // app.listen(3001, () => {
+    //   console.log('listening for requests on port', 3001)
+    // })
   })
   .catch((err) => {
     console.log(err)
