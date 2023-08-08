@@ -29,6 +29,7 @@ const createGroup = async (req, res) => {
     const creator = members[0];
     
     try {
+      // create a group with the current user as the creator and the only member in the group
       const group = await Group.create({name, members,creator})
       const user = await User.findOneAndUpdate({email: creator}, {
         $push:{groups: group}
@@ -43,19 +44,21 @@ const createGroup = async (req, res) => {
 const deleteGroup = async (req, res) => {
     const { id, cur_usr } = req.params
 
-    const target_group = await Group.find({name: id})
+    const target_group = await Group.find({name: id, creator: cur_usr})
 
+    // only a creator of a group can delete it
     if(target_group[0]['creator'] != cur_usr) {
       return res.status(404).json({error: 'You need admin rights to delete this group'})
     }
-
+    
+    // delete the group from the groups list of it's members
     let members = target_group[0]['members'];
     for(let i=0;i<members.length;i++)
     {
       const user = await User.findOneAndUpdate({ email:members[i] }, 
         { $pullAll: { groups: [target_group[0]._id] } } )
     }
-    const group = await Group.findOneAndDelete({name: id})
+    const group = await Group.findOneAndDelete({name: id, creator: cur_usr})
   
     if(!group || group.length == 0) {
       return res.status(400).json({error: 'No such group'})
@@ -91,7 +94,7 @@ else
 }
 }
   
-  // update a group
+  // Adding a new member to a group
   const updateGroup = async (req, res) => {
     const { id } = req.params
     const user = await User.find({email:req.body.members})

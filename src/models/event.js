@@ -25,6 +25,7 @@ const eventSchema = new mongoose.Schema({
   
 });
 
+// A combination of title & creator is unique
 eventSchema.index({ title: 1, creator: 1 }, { unique: true });
 
 const Event = mongoose.model('Event', eventSchema);

@@ -22,7 +22,7 @@ const groupSchema = new mongoose.Schema({
     }
   ],
 });
-
+// A combination of name & creator is unique
 groupSchema.index({ name: 1, creator: 1 }, { unique: true });
 
 const Group = mongoose.model('Group', groupSchema);
